@@ -1,0 +1,38 @@
+========================================
+🎯 NEW PROJECT REQUEST
+Bosswebber Contact Form Submission
+========================================
+
+👤 CONTACT INFORMATION
+----------------------
+Name: {{from_name}}
+Email: {{from_email}}
+Phone/WhatsApp: {{phone}}
+Company: {{company}}
+
+📋 PROJECT DETAILS
+-------------------
+Project Type: {{project_type}}
+Budget Range: {{budget}}
+Timeline: {{timeline}}
+Industry: {{industry}}
+Content Ready: {{content_ready}}
+
+🔗 REFERENCE WEBSITES
+---------------------
+{{references}}
+
+📝 PROJECT DESCRIPTION
+----------------------
+{{message}}
+
+========================================
+Quick Actions:
+- Reply via Email: {{from_email}}
+- Reply via WhatsApp: https://wa.me/250785726750
+
+This email was sent from the Bosswebber contact form
+Bosswebber - Web & Mobile App Development
+Rwanda • Available Worldwide
+========================================
+

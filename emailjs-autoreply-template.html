@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You for Your Request</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f4f4f4;">
+  
+  <div style="background-color: #ffffff; border-radius: 8px; padding: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    
+    <!-- Header -->
+    <div style="text-align: center; border-bottom: 3px solid #6366f1; padding-bottom: 20px; margin-bottom: 30px;">
+      <div style="background-color: #6366f1; color: #ffffff; width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 30px;">
+        ✓
+      </div>
+      <h1 style="color: #333; margin: 0; font-size: 28px;">Thank You, {{from_name}}!</h1>
+      <p style="color: #666; margin: 10px 0 0 0; font-size: 16px;">We've received your project request</p>
+    </div>
+
+    <!-- Main Content -->
+    <div style="margin-bottom: 30px;">
+      <p style="color: #333; font-size: 16px; margin-bottom: 20px;">
+        Hi <strong>{{from_name}}</strong>,
+      </p>
+      
+      <p style="color: #555; font-size: 15px; margin-bottom: 15px;">
+        Thank you for reaching out to <strong>Bosswebber</strong>! We're excited about the possibility of working with you on your <strong>{{project_type}}</strong> project.
+      </p>
+
+      <p style="color: #555; font-size: 15px; margin-bottom: 15px;">
+        We've received your project request and our team will review it carefully. You can expect to hear from us within <strong style="color: #6366f1;">24 hours</strong> with a detailed proposal and next steps.
+      </p>
+    </div>
+
+    <!-- Project Summary Box -->
+    <div style="background-color: #f0f9ff; border-left: 4px solid #6366f1; padding: 20px; border-radius: 6px; margin-bottom: 30px;">
+      <h3 style="color: #333; font-size: 18px; margin-top: 0; margin-bottom: 15px;">📋 Your Project Summary</h3>
+      <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+          <td style="padding: 6px 0; font-weight: bold; color: #555; width: 120px;">Project Type:</td>
+          <td style="padding: 6px 0; color: #333;">{{project_type}}</td>
+        </tr>
+        <tr>
+          <td style="padding: 6px 0; font-weight: bold; color: #555;">Budget Range:</td>
+          <td style="padding: 6px 0; color: #333;">{{budget}}</td>
+        </tr>
+        <tr>
+          <td style="padding: 6px 0; font-weight: bold; color: #555;">Timeline:</td>
+          <td style="padding: 6px 0; color: #333;">{{timeline}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- What Happens Next -->
+    <div style="margin-bottom: 30px;">
+      <h2 style="color: #333; font-size: 20px; margin-bottom: 15px; border-left: 4px solid #6366f1; padding-left: 10px;">
+        🚀 What Happens Next?
+      </h2>
+      <ol style="color: #555; font-size: 15px; padding-left: 20px; margin: 0;">
+        <li style="margin-bottom: 10px;">We'll review your project requirements and prepare a custom proposal</li>
+        <li style="margin-bottom: 10px;">You'll receive a detailed quote and project timeline within 24 hours</li>
+        <li style="margin-bottom: 10px;">We'll schedule a free consultation call to discuss your vision</li>
+        <li style="margin-bottom: 10px;">Once approved, we'll get started on bringing your project to life!</li>
+      </ol>
+    </div>
+
+    <!-- Quick Contact -->
+    <div style="background-color: #f9fafb; padding: 20px; border-radius: 6px; margin-bottom: 30px;">
+      <h3 style="color: #333; font-size: 18px; margin-top: 0; margin-bottom: 15px;">💬 Need to Reach Us?</h3>
+      <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+          <td style="padding: 8px 0; color: #555;">
+            <strong>Email:</strong> 
+            <a href="mailto:bosswebberinfo@gmail.com" style="color: #6366f1; text-decoration: none;">bosswebberinfo@gmail.com</a>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 0; color: #555;">
+            <strong>WhatsApp:</strong> 
+            <a href="https://wa.me/250785726750" style="color: #6366f1; text-decoration: none;">+250 785 726 750</a>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 0; color: #555;">
+            <strong>Response Time:</strong> Within 24 hours
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Helpful Resources -->
+    <div style="margin-bottom: 30px;">
+      <h3 style="color: #333; font-size: 18px; margin-bottom: 15px;">📚 While You Wait</h3>
+      <p style="color: #555; font-size: 15px; margin-bottom: 15px;">
+        Check out our portfolio and resources to learn more about our work:
+      </p>
+      <div style="text-align: center;">
+        <a href="https://bosswebber.com#portfolio" 
+           style="background-color: #6366f1; color: #ffffff; padding: 12px 25px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: bold; margin: 5px;">
+          View Our Portfolio
+        </a>
+        <a href="https://bosswebber.com#pricing" 
+           style="background-color: #ffffff; color: #6366f1; padding: 12px 25px; text-decoration: none; border-radius: 6px; border: 2px solid #6366f1; display: inline-block; font-weight: bold; margin: 5px;">
+          See Pricing
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid #e5e7eb; text-align: center;">
+      <p style="color: #666; font-size: 14px; margin: 5px 0;">
+        <strong>Bosswebber</strong> - Web & Mobile App Development
+      </p>
+      <p style="color: #999; font-size: 12px; margin: 5px 0;">
+        Rwanda • Available Worldwide
+      </p>
+      <p style="color: #999; font-size: 11px; margin: 15px 0 0 0;">
+        This is an automated confirmation email. Please do not reply directly to this message.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
+

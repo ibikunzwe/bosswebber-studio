@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Project Request</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f4f4f4;">
+  
+  <div style="background-color: #ffffff; border-radius: 8px; padding: 30px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    
+    <!-- Header -->
+    <div style="border-bottom: 3px solid #6366f1; padding-bottom: 20px; margin-bottom: 30px;">
+      <h1 style="color: #6366f1; margin: 0; font-size: 28px;">🎯 New Project Request</h1>
+      <p style="color: #666; margin: 5px 0 0 0; font-size: 14px;">Bosswebber Contact Form Submission</p>
+    </div>
+
+    <!-- Contact Information Section -->
+    <div style="margin-bottom: 30px;">
+      <h2 style="color: #333; font-size: 20px; margin-bottom: 15px; border-left: 4px solid #6366f1; padding-left: 10px;">
+        👤 Contact Information
+      </h2>
+      <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+          <td style="padding: 8px 0; font-weight: bold; width: 140px; color: #555;">Name:</td>
+          <td style="padding: 8px 0; color: #333;">{{from_name}}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 0; font-weight: bold; color: #555;">Email:</td>
+          <td style="padding: 8px 0;">
+            <a href="mailto:{{from_email}}" style="color: #6366f1; text-decoration: none;">{{from_email}}</a>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 0; font-weight: bold; color: #555;">Phone/WhatsApp:</td>
+          <td style="padding: 8px 0; color: #333;">{{phone}}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 0; font-weight: bold; color: #555;">Company:</td>
+          <td style="padding: 8px 0; color: #333;">{{company}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Project Details Section -->
+    <div style="margin-bottom: 30px;">
+      <h2 style="color: #333; font-size: 20px; margin-bottom: 15px; border-left: 4px solid #6366f1; padding-left: 10px;">
+        📋 Project Details
+      </h2>
+      <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+          <td style="padding: 8px 0; font-weight: bold; width: 140px; color: #555;">Project Type:</td>
+          <td style="padding: 8px 0; color: #333;">
+            <span style="background-color: #e0e7ff; color: #6366f1; padding: 4px 12px; border-radius: 4px; font-size: 13px; display: inline-block;">
+              {{project_type}}
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 0; font-weight: bold; color: #555;">Budget Range:</td>
+          <td style="padding: 8px 0; color: #333;">
+            <span style="background-color: #d1fae5; color: #059669; padding: 4px 12px; border-radius: 4px; font-size: 13px; display: inline-block;">
+              {{budget}}
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 0; font-weight: bold; color: #555;">Timeline:</td>
+          <td style="padding: 8px 0; color: #333;">
+            <span style="background-color: #fef3c7; color: #d97706; padding: 4px 12px; border-radius: 4px; font-size: 13px; display: inline-block;">
+              {{timeline}}
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 0; font-weight: bold; color: #555;">Industry:</td>
+          <td style="padding: 8px 0; color: #333;">{{industry}}</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 0; font-weight: bold; color: #555;">Content Ready:</td>
+          <td style="padding: 8px 0; color: #333;">
+            <span style="background-color: #fce7f3; color: #be185d; padding: 4px 12px; border-radius: 4px; font-size: 13px; display: inline-block;">
+              {{content_ready}}
+            </span>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Reference Websites Section -->
+    <div style="margin-bottom: 30px;">
+      <h2 style="color: #333; font-size: 20px; margin-bottom: 15px; border-left: 4px solid #6366f1; padding-left: 10px;">
+        🔗 Reference Websites
+      </h2>
+      <div style="background-color: #f9fafb; padding: 15px; border-radius: 6px; color: #333;">
+        {{references}}
+      </div>
+    </div>
+
+    <!-- Project Description Section -->
+    <div style="margin-bottom: 30px;">
+      <h2 style="color: #333; font-size: 20px; margin-bottom: 15px; border-left: 4px solid #6366f1; padding-left: 10px;">
+        📝 Project Description
+      </h2>
+      <div style="background-color: #f9fafb; padding: 20px; border-radius: 6px; border-left: 4px solid #6366f1; color: #333; white-space: pre-wrap;">
+        {{message}}
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid #e5e7eb;">
+      <table style="width: 100%;">
+        <tr>
+          <td style="text-align: center;">
+            <a href="mailto:{{from_email}}?subject=Re: Project Request&body=Hi {{from_name}},%0D%0A%0D%0AThank you for your project request..." 
+               style="background-color: #6366f1; color: #ffffff; padding: 12px 30px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: bold; margin-right: 10px;">
+              Reply via Email
+            </a>
+            <a href="https://wa.me/250785726750?text=Hi! I received your project request for {{project_type}}" 
+               style="background-color: #25D366; color: #ffffff; padding: 12px 30px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: bold;">
+              Reply via WhatsApp
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Footer -->
+    <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid #e5e7eb; text-align: center; color: #666; font-size: 12px;">
+      <p style="margin: 5px 0;">This email was sent from the Bosswebber contact form</p>
+      <p style="margin: 5px 0;">Bosswebber - Web & Mobile App Development</p>
+      <p style="margin: 5px 0;">Rwanda • Available Worldwide</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
+

@@ -1,0 +1,43 @@
+========================================
+✓ THANK YOU FOR YOUR REQUEST!
+========================================
+
+Hi {{from_name}},
+
+Thank you for reaching out to Bosswebber! We're excited about the possibility of working with you on your {{project_type}} project.
+
+We've received your project request and our team will review it carefully. You can expect to hear from us within 24 hours with a detailed proposal and next steps.
+
+📋 YOUR PROJECT SUMMARY
+------------------------
+Project Type: {{project_type}}
+Budget Range: {{budget}}
+Timeline: {{timeline}}
+
+🚀 WHAT HAPPENS NEXT?
+----------------------
+1. We'll review your project requirements and prepare a custom proposal
+2. You'll receive a detailed quote and project timeline within 24 hours
+3. We'll schedule a free consultation call to discuss your vision
+4. Once approved, we'll get started on bringing your project to life!
+
+💬 NEED TO REACH US?
+--------------------
+Email: bosswebberinfo@gmail.com
+WhatsApp: +250 785 726 750
+Response Time: Within 24 hours
+
+📚 WHILE YOU WAIT
+-----------------
+Check out our portfolio and resources:
+- View Our Portfolio: https://bosswebber.com#portfolio
+- See Pricing: https://bosswebber.com#pricing
+
+========================================
+Bosswebber - Web & Mobile App Development
+Rwanda • Available Worldwide
+
+This is an automated confirmation email. 
+Please do not reply directly to this message.
+========================================
+
