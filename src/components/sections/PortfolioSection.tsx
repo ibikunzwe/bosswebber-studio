@@ -198,7 +198,8 @@ export function PortfolioSection() {
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={`${project.title} - ${project.category} project by Bosswebber`}
+                    title={`${project.title} - ${project.category}`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
                   />
@@ -248,7 +249,8 @@ export function PortfolioSection() {
             <div className="aspect-video">
               <img
                 src={selectedProject.image}
-                alt={selectedProject.title}
+                alt={`${selectedProject.title} - ${selectedProject.category} project showcase`}
+                title={`${selectedProject.title} - ${selectedProject.category}`}
                 className="w-full h-full object-cover"
               />
             </div>

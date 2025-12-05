@@ -89,7 +89,8 @@ export function TestimonialsSection() {
                 <div className="flex items-center gap-4">
                   <img
                     src={testimonial.avatar}
-                    alt={testimonial.name}
+                    alt={`${testimonial.name} - ${testimonial.role} testimonial for Bosswebber`}
+                    title={`${testimonial.name} - ${testimonial.role}`}
                     className="w-12 h-12 rounded-full object-cover ring-2 ring-primary/30"
                     loading="lazy"
                   />

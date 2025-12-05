@@ -75,7 +75,8 @@ export function AboutSection() {
               <div className="glass-card rounded-2xl overflow-hidden">
                 <img
                   src="/images/bosswebber in office.png"
-                  alt="Bosswebber - Developer in Office"
+                  alt="Bosco Niyitegeka - Bosswebber web developer working in office, Rwanda web development services"
+                  title="Bosswebber - Professional Web Developer in Rwanda"
                   className="w-full h-auto object-cover"
                   loading="lazy"
                 />
