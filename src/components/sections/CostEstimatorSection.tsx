@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
 
 const projectTypes = [
   { id: "basic", label: "Basic Website (1-5 pages)", basePrice: 300000 },
@@ -29,16 +30,35 @@ export function CostEstimatorSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [selectedType, setSelectedType] = useState("");
   const [selectedAddOns, setSelectedAddOns] = useState<string[]>([]);
+  const [promoCode, setPromoCode] = useState("");
+  const [discountApplied, setDiscountApplied] = useState(0);
+  const [promoMessage, setPromoMessage] = useState({ text: "", type: "" });
 
   const basePrice = projectTypes.find((t) => t.id === selectedType)?.basePrice || 0;
   const addOnsPrice = selectedAddOns.reduce((sum, id) => {
     const addOn = addOns.find((a) => a.id === id);
     return sum + (addOn?.price || 0);
   }, 0);
-  const totalPrice = basePrice + addOnsPrice;
+  const subtotalPrice = basePrice + addOnsPrice;
+  const discountAmount = subtotalPrice * discountApplied;
+  const totalPrice = subtotalPrice - discountAmount;
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat("en-RW").format(price);
+  };
+
+  const handleApplyPromo = () => {
+    const code = promoCode.trim().toUpperCase();
+    if (code === "BOSS20") {
+      setDiscountApplied(0.2);
+      setPromoMessage({ text: "20% discount applied!", type: "success" });
+    } else if (code === "START10") {
+      setDiscountApplied(0.1);
+      setPromoMessage({ text: "10% discount applied!", type: "success" });
+    } else {
+      setDiscountApplied(0);
+      setPromoMessage({ text: "Invalid or expired promo code", type: "error" });
+    }
   };
 
   const handleAddOnToggle = (id: string) => {
@@ -171,7 +191,39 @@ export function CostEstimatorSection() {
             </div>
 
             {/* Total */}
-            <div className="border-t border-border pt-4 mt-4">
+            <div className="border-t border-border pt-4 mt-auto">
+              {/* Promo Code */}
+              <div className="mb-6">
+                <Label className="mb-2 block text-sm text-muted-foreground">Have a Promo Code?</Label>
+                <div className="flex gap-2">
+                  <Input 
+                    placeholder="Enter code" 
+                    value={promoCode} 
+                    onChange={(e) => setPromoCode(e.target.value)}
+                    className="bg-background/50 h-10 w-full"
+                  />
+                  <Button variant="outline" onClick={handleApplyPromo} className="h-10 shrink-0">Apply</Button>
+                </div>
+                {promoMessage.text && (
+                  <p className={`text-sm mt-2 ${promoMessage.type === 'success' ? 'text-accent font-medium' : 'text-red-400'}`}>
+                    {promoMessage.text}
+                  </p>
+                )}
+              </div>
+
+              {discountApplied > 0 && (
+                <div className="flex justify-between items-center mb-2 text-muted-foreground">
+                  <span>Subtotal</span>
+                  <span>{formatPrice(subtotalPrice)} RWF</span>
+                </div>
+              )}
+              {discountApplied > 0 && (
+                <div className="flex justify-between items-center mb-4 text-accent font-medium">
+                  <span>Discount ({discountApplied * 100}%)</span>
+                  <span>-{formatPrice(discountAmount)} RWF</span>
+                </div>
+              )}
+
               <div className="flex justify-between items-center mb-6">
                 <span className="text-lg font-semibold">Estimated Total</span>
                 <span className="text-3xl font-bold text-accent">
@@ -181,12 +233,19 @@ export function CostEstimatorSection() {
 
               <div className="space-y-2 mb-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-accent" />
+                  <Check className="w-4 h-4 text-accent shrink-0" />
                   <span>3 free revisions included</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-accent" />
+                  <Check className="w-4 h-4 text-accent shrink-0" />
                   <span>50% upfront, 50% on completion</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-medium text-foreground block">We accept MTN MOMO CODE: 1964758</span>
+                    <span className="text-xs text-muted-foreground block mt-0.5">Dial *182*8*1*1964758# and follow instructions on your phone screen.</span>
+                  </div>
                 </div>
               </div>
 

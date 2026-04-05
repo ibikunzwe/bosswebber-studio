@@ -26,6 +26,8 @@ const pricingTiers = [
   {
     name: "Professional",
     price: "400,000 - 700,000",
+    originalPrice: "500,000 - 850,000",
+    discountBadge: "Save 20%",
     priceRange: true,
     currency: "RWF",
     description: "Ideal for business websites & multi-page sites",
@@ -116,11 +118,21 @@ export function PricingSection() {
 
               <div className="text-center mb-8">
                 <tier.icon className={`w-12 h-12 mx-auto mb-4 ${tier.popular ? "text-accent" : "text-primary"}`} />
-                <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
+                <h3 className="text-2xl font-bold mb-2 flex items-center justify-center gap-2">
+                  {tier.name}
+                  {tier.discountBadge && (
+                    <span className="text-xs bg-accent/20 text-accent px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">{tier.discountBadge}</span>
+                  )}
+                </h3>
                 <p className="text-muted-foreground text-sm mb-4">{tier.description}</p>
-                <div className="flex items-baseline justify-center gap-1">
-                  <span className={`${tier.priceRange ? "text-3xl" : "text-2xl"} font-bold`}>{tier.price}</span>
-                  {tier.currency && <span className="text-muted-foreground">{tier.currency}</span>}
+                <div className="flex flex-col items-center justify-center gap-1">
+                  {tier.originalPrice && (
+                    <span className="text-muted-foreground line-through text-sm">{tier.originalPrice} {tier.currency}</span>
+                  )}
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className={`${tier.priceRange ? "text-3xl" : "text-2xl"} font-bold`}>{tier.price}</span>
+                    {tier.currency && <span className="text-muted-foreground">{tier.currency}</span>}
+                  </div>
                 </div>
               </div>
 
@@ -153,6 +165,11 @@ export function PricingSection() {
         >
           <p className="text-muted-foreground mb-4">
             Need something more custom? Let's discuss your specific requirements.
+            <br />
+            <span className="text-accent font-medium mt-2 inline-block bg-accent/10 px-4 py-2 rounded-xl text-sm">
+              Approved Payment Method: MTN MOMO CODE: 1964758 <br/>
+              <span className="text-xs text-muted-foreground mt-1 font-normal block">Dial *182*8*1*1964758# and follow instructions on your phone screen.</span>
+            </span>
           </p>
           <Button
             variant="glass"

@@ -1,0 +1,45 @@
+=============================================================
+       WEBSITE PREPARATION CHECKLIST | BOSSWEBBER
+=============================================================
+10 Essential Steps to Prepare Before We Build Your Website
+
+Before kicking off a web development project, having a clear roadmap saves time, money, and ensures the final product aligns perfectly with your vision. Run through this checklist to get prepared!
+
+[ ] 1. GOAL DEFINITION
+    What is the primary purpose of the site? (e.g., generate leads, sell products, display a portfolio, provide information). 
+
+[ ] 2. TARGET AUDIENCE
+    Who are your ideal visitors? Define their age, location, technical proficiency, and what problem your website solves for them.
+
+[ ] 3. DOMAIN & HOSTING PREFERENCES
+    Do you have a desired domain name? (e.g., www.yourbusiness.com). 
+    *Note: Bosswebber can assist with acquiring and setting this up if you don't have it yet.*
+
+[ ] 4. COMPETITOR ANALYSIS & INSPIRATION
+    Find 3-5 links of websites you love. Note what you like about them (e.g., "I love the clean colors on site A, and the checkout process on site B").
+
+[ ] 5. BRANDING ASSETS
+    Gather your high-resolution logos, brand color codes (Hex codes), and desired fonts.
+
+[ ] 6. SITEMAP (PAGE LIST)
+    Outline which pages you need. A standard business structure looks like:
+    • Home
+    • About Us
+    • Services / Products
+    • Testimonials / Case Studies
+    • Contact Us
+
+[ ] 7. CORE CONTENT & COPYWRITING
+    Write the text (copy) for each page ahead of time. Think about powerful headlines and clear Call-to-Action (CTA) buttons like "Buy Now" or "Get a Quote".
+
+[ ] 8. IMAGES AND MEDIA
+    Organize high-quality photos of your team, products, or office into a Google Drive or Dropbox folder. (If you don't have this, let us know and we can use premium stock imagery).
+
+[ ] 9. THIRD-PARTY INTEGRATIONS
+    Identify any tools you need connected to the site (e.g., Mailchimp for newsletters, Stripe/Momo for payments, Google Analytics, WhatsApp messaging).
+    
+[ ] 10. BUDGET & TIMELINE
+    Know your hard limits. Clearly defining your budget and launch deadline helps us architect a solution that fits your exact parameters.
+
+Ready to get started? 
+Contact Bosswebber today at bosswebberinfo@gmail.com or WhatsApp us at +250 785 726 750!

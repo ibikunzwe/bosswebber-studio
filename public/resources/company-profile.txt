@@ -1,0 +1,47 @@
+=============================================================
+             BOSSWEBBER | COMPANY PROFILE
+=============================================================
+"Bringing Your Digital Vision to Life"
+
+WHO WE ARE
+----------
+Bosswebber is a premier scalable freelance tech agency founded by Bosco Niyitegeka. Operating seamlessly out of Rwanda and serving clients worldwide, we are dedicated to helping small businesses, enterprises, and individuals transform their ideas into powerful, high-conversion digital products.
+
+OUR MISSION
+-----------
+To make professional, high-performance digital services accessible to everyone, empowering businesses to succeed in the modern digital landscape.
+
+CORE SERVICES
+-------------
+1. Web Development
+   • High-Performance Landing Pages
+   • E-Commerce Solutions
+   • Dynamic Web Applications
+   • SEO-Optimized Infrastructure
+
+2. Mobile App Development
+   • Cross-platform iOS and Android Apps
+   • Custom Mobile Solutions
+
+3. UI/UX Design
+   • Wireframing and Prototyping
+   • Modern, conversion-focused interfaces
+   • Brand Identity Integration
+
+4. Digital Solutions & Maintenance
+   • Reliable server configurations
+   • Routine bug fixes & security patches
+   • Long-term support
+
+THE EXPERTISE BEHIND BOSSWEBBER
+-------------------------------
+Our development philosophy centers around modern tech stacks including React, TypeScript, Next.js, Vite, and Tailwind CSS. We prioritize speed, accessibility, and clean architecture so your digital presence isn't just beautiful—it's fast and reliable.
+
+CONTACT US
+----------
+• Email: bosswebberinfo@gmail.com
+• Phone / WhatsApp: +250 785 726 750
+• Location: Kigali, Rwanda (Serving Global Clients)
+
+"Your growth is our blueprint."
+=============================================================

@@ -14,6 +14,7 @@ const navLinks = [
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showPromo, setShowPromo] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,16 +25,43 @@ export function Navbar() {
   }, []);
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "glass-card border-b border-border/50"
-          : "bg-transparent"
-      }`}
-    >
+    <>
+      <AnimatePresence>
+        {showPromo && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="fixed top-0 left-0 right-0 z-[60] bg-accent/10 backdrop-blur-md border-b border-accent/20 overflow-hidden"
+          >
+            <div className="container mx-auto px-4 py-2 flex items-center justify-between text-sm">
+              <div className="flex-1 text-center font-medium">
+                <span className="font-bold text-accent">🎉 Limited Time Offer:</span> Use code <span className="font-mono font-bold bg-accent/20 px-2 py-0.5 rounded mx-1">BOSS20</span> for 20% off in our cost estimator!
+              </div>
+              <button 
+                onClick={() => setShowPromo(false)} 
+                className="text-muted-foreground hover:text-foreground ml-4 p-1 rounded-full hover:bg-background/20 transition-colors shrink-0"
+                aria-label="Close promotion"
+              >
+                <X size={16} />
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6 }}
+        className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
+          showPromo ? "top-[36px] sm:top-[40px]" : "top-0"
+        } ${
+          isScrolled
+            ? "glass-card border-b border-border/50"
+            : "bg-transparent"
+        }`}
+      >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <a href="#" className="flex items-center gap-2">
@@ -100,6 +128,7 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+      </motion.header>
+    </>
   );
 }

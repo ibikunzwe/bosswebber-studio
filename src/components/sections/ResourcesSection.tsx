@@ -8,24 +8,27 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 const resources = [
   {
     icon: FileText,
-    title: "Company Profile PDF",
+    title: "Company Profile",
     description: "Download our professional company profile with services, portfolio highlights, and contact information.",
-    action: "Download PDF",
-    href: "#",
+    action: "Download Profile",
+    href: "/resources/company-profile.txt",
+    download: "Bosswebber_Company_Profile.txt",
   },
   {
     icon: CheckSquare,
     title: "Website Preparation Checklist",
     description: "10 essential things to prepare before building your website. Free guide to help you get started.",
     action: "Download Checklist",
-    href: "#",
+    href: "/resources/website-checklist.txt",
+    download: "Bosswebber_Website_Checklist.txt",
   },
   {
     icon: BookOpen,
     title: "Web Development Guide",
     description: "Learn about the web development process, technologies we use, and what to expect.",
-    action: "Read Guide",
-    href: "#",
+    action: "Download Guide",
+    href: "/resources/development-guide.txt",
+    download: "Bosswebber_Dev_Guide.txt",
   },
 ];
 
@@ -33,11 +36,9 @@ export function ResourcesSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const handleDownload = (resourceType: string) => {
-    // In a real implementation, this would trigger a download
-    // For now, we'll show a toast or open a link
-    console.log(`Downloading ${resourceType}`);
-    // You can implement actual download logic here
+  const handleDownload = (resourceTitle: string) => {
+    // Analytics/tracking could go here in a production environment
+    console.log(`User initiated download for: ${resourceTitle}`);
   };
 
   return (
@@ -87,9 +88,9 @@ export function ResourcesSection() {
                     onClick={() => handleDownload(resource.title)}
                     asChild
                   >
-                    <a href={resource.href}>
+                    <a href={resource.href} download={resource.download}>
                       {resource.action}
-                      <ArrowRight size={16} className="ml-2" />
+                      <Download size={16} className="ml-2" />
                     </a>
                   </Button>
                 </CardContent>

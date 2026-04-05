@@ -66,7 +66,7 @@ export function ContactSection() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-
+    
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
 
@@ -214,9 +214,9 @@ ${submissionData.message}
           console.warn("Auto-reply failed (non-critical):", autoReplyError);
         }
       }
-
-      toast({
-        title: "Project Request Sent!",
+    
+    toast({
+      title: "Project Request Sent!",
         description: "Thank you! We've received your request and will get back to you within 24 hours. Check your email for confirmation.",
       });
 
@@ -261,9 +261,9 @@ ${submissionData.message}
         title: errorMessage,
         description: errorDetails + " You can also contact us directly at bosswebberinfo@gmail.com or +250 785 726 750",
         variant: "destructive",
-      });
+    });
     } finally {
-      setIsSubmitting(false);
+    setIsSubmitting(false);
     }
   };
 
@@ -339,6 +339,17 @@ ${submissionData.message}
                   <div>
                     <p className="text-sm text-muted-foreground">Location</p>
                     <span className="font-medium">Rwanda • Available Worldwide</span>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 pt-2">
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
+                    <span className="text-accent font-bold text-xs text-center leading-tight">MTN<br/>MOMO</span>
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">MTN Mobile Money Payment</p>
+                    <span className="font-medium tracking-wide block mb-0.5">CODE: <span className="text-accent">1964758</span></span>
+                    <span className="text-xs text-muted-foreground block shadow-sm">Dial *182*8*1*1964758# and follow instructions.</span>
                   </div>
                 </div>
               </div>
@@ -555,15 +566,15 @@ ${submissionData.message}
               </div>
 
               <div className="grid sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="references">Reference Websites (Optional)</Label>
-                  <Input
-                    id="references"
-                    name="references"
-                    maxLength={500}
-                    placeholder="Links to websites you like (separate with commas)"
-                    className="bg-background/50"
-                  />
+              <div className="space-y-2">
+                <Label htmlFor="references">Reference Websites (Optional)</Label>
+                <Input
+                  id="references"
+                  name="references"
+                  maxLength={500}
+                  placeholder="Links to websites you like (separate with commas)"
+                  className="bg-background/50"
+                />
                 </div>
                 <div className="space-y-2">
                   <Label>Do you have content ready? *</Label>

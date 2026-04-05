@@ -66,6 +66,13 @@ export function Footer() {
                 <MapPin size={16} />
                 Rwanda • Available Worldwide
               </div>
+              <div className="flex flex-col gap-1 text-muted-foreground pt-3 mt-3 border-t border-border/50">
+                <div className="flex items-center gap-2">
+                  <span className="text-accent font-bold text-xs px-1.5 py-0.5 bg-accent/10 rounded">MTN MOMO</span>
+                  <span className="text-sm">CODE: 1964758</span>
+                </div>
+                <span className="text-xs">Dial *182*8*1*1964758#</span>
+              </div>
             </div>
           </div>
 

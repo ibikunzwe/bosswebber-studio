@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
+import { PromotionsSection } from "@/components/sections/PromotionsSection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
 import { CostEstimatorSection } from "@/components/sections/CostEstimatorSection";
@@ -69,7 +70,7 @@ const Index = () => {
           "name": "What payment methods do you accept?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We accept Mobile Money (MTN, Airtel), bank transfers, and international payments via PayPal. Payment is typically split: 50% upfront to start and 50% upon completion."
+            "text": "We accept Mobile Money (MTN MOMO CODE: 1964758 - Dial *182*8*1*1964758# and follow instructions, Airtel), bank transfers, and international payments via PayPal. Payment is typically split: 50% upfront to start and 50% upon completion."
           }
         },
         {
@@ -108,6 +109,7 @@ const Index = () => {
         <HeroSection />
         <AboutSection />
         <ServicesSection />
+        <PromotionsSection />
         <PricingSection />
         <ProcessSection />
         <CostEstimatorSection />

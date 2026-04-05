@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     question: "What payment methods do you accept?",
-    answer: "We accept Mobile Money (MTN, Airtel), bank transfers, and international payments via PayPal. Payment is typically split: 50% upfront to start and 50% upon completion.",
+    answer: "We accept Mobile Money (MTN MOMO CODE: 1964758 - Dial *182*8*1*1964758# and follow instructions on your phone screen, Airtel), bank transfers, and international payments via PayPal. Payment is typically split: 50% upfront to start and 50% upon completion.",
   },
   {
     question: "How many revisions do I get?",
