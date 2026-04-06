@@ -1,20 +1,19 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MapPin, Phone, Cloud, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { name: "Services", href: "#services" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "Portfolio", href: "#portfolio" },
-  { name: "FAQ", href: "#faq" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "#" },
+  { name: "Services", href: "#services", hasDropdown: true },
+  { name: "About", href: "#about" },
+  { name: "Blog", href: "#blog" },
+  { name: "Styles", href: "#styles" },
 ];
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [showPromo, setShowPromo] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,71 +25,59 @@ export function Navbar() {
 
   return (
     <>
-      <AnimatePresence>
-        {showPromo && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="fixed top-0 left-0 right-0 z-[60] bg-accent/10 backdrop-blur-md border-b border-accent/20 overflow-hidden"
-          >
-            <div className="container mx-auto px-4 py-2 flex items-center justify-between text-sm">
-              <div className="flex-1 text-center font-medium">
-                <span className="font-bold text-accent">🎉 Limited Time Offer:</span> Use code <span className="font-mono font-bold bg-accent/20 px-2 py-0.5 rounded mx-1">BOSS20</span> for 20% off in our cost estimator!
-              </div>
-              <button 
-                onClick={() => setShowPromo(false)} 
-                className="text-muted-foreground hover:text-foreground ml-4 p-1 rounded-full hover:bg-background/20 transition-colors shrink-0"
-                aria-label="Close promotion"
-              >
-                <X size={16} />
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Top Bar */}
+      <div className="hidden lg:block fixed top-0 left-0 right-0 z-[60] border-b border-white/10 bg-transparent text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between text-xs py-2 opacity-90">
+          <div className="flex items-center gap-2">
+            <MapPin size={14} className="text-primary" />
+            <span>Serving Global Clients from Kigali, Rwanda</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Phone size={14} className="text-primary" />
+            <span>Contact Us Today <span className="text-primary font-semibold">+250 785 726 750</span></span>
+          </div>
+        </div>
+      </div>
 
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
-        className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
-          showPromo ? "top-[36px] sm:top-[40px]" : "top-0"
-        } ${
+        className={`fixed left-0 right-0 z-50 transition-all duration-300 lg:top-[33px] ${
           isScrolled
             ? "glass-card border-b border-border/50"
-            : "bg-transparent"
+            : "bg-transparent border-b border-white/10 lg:border-none"
         }`}
       >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <a href="#" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">B</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">Bosswebber</span>
+          {/* Logo */}
+          <a href="#" className="flex items-center gap-2 text-white">
+            <Cloud size={32} strokeWidth={1.5} />
           </a>
 
-          <div className="hidden lg:flex items-center gap-8">
+          {/* Nav Links */}
+          <div className="hidden lg:flex items-center gap-8 ml-auto mr-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium"
+                className="text-white/80 hover:text-white transition-colors duration-200 text-sm flex items-center gap-1"
               >
                 {link.name}
+                {link.hasDropdown && <ChevronDown size={14} className="opacity-70" />}
               </a>
             ))}
           </div>
 
           <div className="hidden lg:block">
-            <Button variant="hero" size="lg" asChild>
-              <a href="#contact">Start Project</a>
+            <Button variant="outline" className="text-white border-white/50 bg-transparent hover:bg-white hover:text-black rounded-none px-6 py-5 text-sm uppercase tracking-wider" asChild>
+              <a href="#contact">Contact</a>
             </Button>
           </div>
 
           <button
-            className="lg:hidden text-foreground p-2"
+            className="lg:hidden text-white p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -114,14 +101,14 @@ export function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium py-2"
+                  className="block text-white/80 hover:text-white transition-colors duration-200 font-medium py-2"
                 >
                   {link.name}
                 </a>
               ))}
-              <Button variant="hero" size="lg" className="w-full mt-4" asChild>
+              <Button variant="outline" className="w-full mt-4 text-white border-white/50 bg-transparent" asChild>
                 <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
-                  Start Project
+                  Contact
                 </a>
               </Button>
             </div>
