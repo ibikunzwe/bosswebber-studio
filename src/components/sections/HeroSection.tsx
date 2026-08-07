@@ -1,23 +1,72 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 import { ArrowRight, Trophy, Lock, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const heroSlides = [
+  { src: "/images/hero/web-development.jpg", label: "Web Development" },
+  { src: "/images/hero/custom-software.jpg", label: "Custom Software" },
+  { src: "/images/hero/performance-infrastructure.jpg", label: "Performance & Infrastructure" },
+  { src: "/images/hero/dedicated-support.jpg", label: "Dedicated Support" },
+  { src: "/images/hero/professional-consulting.jpg", label: "Professional Consulting" },
+];
+
 export function HeroSection() {
+  const [current, setCurrent] = useState(0);
+
+  // Preload every slide up front so the crossfade never waits on a network fetch
+  useEffect(() => {
+    heroSlides.forEach((slide) => {
+      const img = new Image();
+      img.src = slide.src;
+    });
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative min-h-[92vh] flex flex-col justify-center overflow-visible bg-background pb-32">
-      {/* Background Image & Overlay */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: "url('/images/portfolio picture.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed"
-        }}
-      />
+      {/* Background Image Carousel */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <AnimatePresence>
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url('${heroSlides[current].src}')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+        </AnimatePresence>
+      </div>
       {/* Dark tint overlay for text readability */}
       <div className="absolute inset-0 z-0 bg-[#0f0b29]/80 mix-blend-multiply" />
       <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#0f0b29] to-transparent/50" />
+
+      {/* Carousel Indicators */}
+      <div className="absolute bottom-8 right-6 sm:right-10 z-10 flex gap-2">
+        {heroSlides.map((slide, index) => (
+          <button
+            key={slide.label}
+            type="button"
+            onClick={() => setCurrent(index)}
+            aria-label={`Show ${slide.label} slide`}
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              index === current ? "w-8 bg-primary" : "w-4 bg-white/40 hover:bg-white/60"
+            }`}
+          />
+        ))}
+      </div>
       
       {/* Container for content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-48 pb-16">
