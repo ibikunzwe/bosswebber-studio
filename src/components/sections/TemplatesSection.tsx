@@ -10,6 +10,7 @@ import {
   Rocket,
   Image as ImageIcon,
   Hotel,
+  ZoomIn,
   type LucideIcon,
 } from "lucide-react";
 import {
@@ -46,11 +47,13 @@ function TemplateCard({
   index,
   isInView,
   onSelect,
+  onPreview,
 }: {
   template: Template;
   index: number;
   isInView: boolean;
   onSelect: (template: Template) => void;
+  onPreview: (template: Template) => void;
 }) {
   const [imageFailed, setImageFailed] = useState(false);
   const Icon = template.icon;
@@ -63,7 +66,21 @@ function TemplateCard({
       className="group rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
     >
       {/* Preview area */}
-      <div className={`relative aspect-[4/3] bg-gradient-to-br ${template.color} flex items-center justify-center overflow-hidden`}>
+      <div
+        role={imageFailed ? undefined : "button"}
+        tabIndex={imageFailed ? undefined : 0}
+        onClick={() => !imageFailed && onPreview(template)}
+        onKeyDown={(e) => {
+          if (!imageFailed && (e.key === "Enter" || e.key === " ")) {
+            e.preventDefault();
+            onPreview(template);
+          }
+        }}
+        aria-label={imageFailed ? undefined : `View ${template.title} full size`}
+        className={`relative aspect-[4/3] bg-gradient-to-br ${template.color} flex items-center justify-center overflow-hidden ${
+          imageFailed ? "" : "cursor-zoom-in"
+        }`}
+      >
         {!imageFailed && (
           <img
             src={template.image}
@@ -79,11 +96,21 @@ function TemplateCard({
           </div>
         )}
 
+        {/* Zoom affordance */}
+        {!imageFailed && (
+          <div className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
+            <ZoomIn className="w-4 h-4 text-slate-700" />
+          </div>
+        )}
+
         {/* Hover overlay */}
         <div className="absolute inset-0 bg-slate-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <button
             type="button"
-            onClick={() => onSelect(template)}
+            onClick={(e) => {
+              e.stopPropagation();
+              onSelect(template);
+            }}
             className="px-5 py-2.5 bg-primary text-primary-foreground text-sm font-semibold rounded-full hover:bg-primary/90 transition-colors"
           >
             Get This Style
@@ -103,6 +130,7 @@ export function TemplatesSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(null);
+  const [previewTemplate, setPreviewTemplate] = useState<Template | null>(null);
 
   return (
     <section id="templates" className="section-padding relative overflow-hidden bg-white">
@@ -135,6 +163,7 @@ export function TemplatesSection() {
               index={index}
               isInView={isInView}
               onSelect={setSelectedTemplate}
+              onPreview={setPreviewTemplate}
             />
           ))}
         </div>
@@ -154,6 +183,41 @@ export function TemplatesSection() {
               initialMessage={`I'm interested in a ${selectedTemplate.title} (${selectedTemplate.category}) style website. Please prepare a custom quote.`}
               onSuccess={() => setSelectedTemplate(null)}
             />
+          )}
+        </DialogContent>
+      </Dialog>
+
+      {/* Full-size Image Lightbox */}
+      <Dialog open={!!previewTemplate} onOpenChange={(open) => !open && setPreviewTemplate(null)}>
+        <DialogContent className="max-w-[95vw] sm:max-w-4xl p-0 overflow-hidden bg-black/95 border-none text-white">
+          <DialogHeader className="sr-only">
+            <DialogTitle>{previewTemplate?.title} full-size preview</DialogTitle>
+            <DialogDescription>{previewTemplate?.category}</DialogDescription>
+          </DialogHeader>
+          {previewTemplate && (
+            <>
+              <img
+                src={previewTemplate.image}
+                alt={`${previewTemplate.title} template preview, full size`}
+                className="w-full max-h-[85vh] object-contain"
+              />
+              <div className="p-4 flex items-center justify-between gap-4 bg-black/60">
+                <div>
+                  <h3 className="font-bold text-white">{previewTemplate.title}</h3>
+                  <p className="text-xs text-white/60">{previewTemplate.category}</p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSelectedTemplate(previewTemplate);
+                    setPreviewTemplate(null);
+                  }}
+                  className="shrink-0 px-4 py-2 bg-primary text-primary-foreground text-sm font-semibold rounded-full hover:bg-primary/90 transition-colors"
+                >
+                  Get This Style
+                </button>
+              </div>
+            </>
           )}
         </DialogContent>
       </Dialog>
