@@ -77,8 +77,8 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-white"
           >
-            Affordable Web & App Development <br />
-            <span className="text-primary text-3xl sm:text-4xl md:text-5xl">suitable for your business in Rwanda</span>
+            Website Design & Graphic Design <br />
+            <span className="text-primary text-3xl sm:text-4xl md:text-5xl">in Kigali, Rwanda</span>
           </motion.h1>
 
           <motion.p
@@ -87,7 +87,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg sm:text-xl text-slate-300 max-w-xl mb-10"
           >
-            We transform your ideas into powerful, high-conversion web & mobile products tailored perfectly to your business needs.
+            Affordable website design, graphic design, logo maker, and app development — we transform your ideas into powerful, high-conversion digital products tailored to your business.
           </motion.p>
 
           <motion.div

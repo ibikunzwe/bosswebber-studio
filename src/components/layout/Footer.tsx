@@ -9,7 +9,8 @@ const footerLinks = {
     { name: "Contact", href: "#contact" },
   ],
   services: [
-    { name: "Web Development", href: "#services" },
+    { name: "Website Design", href: "#services" },
+    { name: "Graphic Design & Logo Maker", href: "#services" },
     { name: "Mobile Apps", href: "#services" },
     { name: "UI/UX Design", href: "#services" },
     { name: "E-commerce", href: "#services" },
@@ -43,7 +44,7 @@ export function Footer() {
               <span className="text-xl font-bold text-foreground">Bosswebber</span>
             </a>
             <p className="text-muted-foreground mb-6 max-w-sm">
-              Building high-performance websites and mobile apps that empower businesses to succeed in the digital world.
+              Website design, graphic design, and logo maker agency in Kigali, Rwanda — building high-performance websites and mobile apps that empower businesses to succeed in the digital world.
             </p>
             
             {/* Contact Info */}

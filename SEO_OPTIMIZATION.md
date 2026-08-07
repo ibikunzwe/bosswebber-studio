@@ -65,24 +65,41 @@
 ## 🎯 Target Keywords
 
 ### Primary Keywords
+- website design Kigali
+- web design Rwanda
+- graphic design Rwanda
+- logo maker Rwanda / logo design Kigali
 - web development Rwanda
-- mobile app development Rwanda
 - website developer Kigali
-- custom software Rwanda
 
 ### Secondary Keywords
+- branding Rwanda / brand identity design Rwanda
+- mobile app development Rwanda
+- custom software Rwanda
 - e-commerce development Rwanda
 - hotel management system Rwanda
 - hospital management system Rwanda
 - school management system Rwanda
 - UI/UX design Rwanda
 - freelance developer Rwanda
+- affordable website design Rwanda
 
 ### Long-tail Keywords
-- web development services in Rwanda
+- website design and graphic design agency in Kigali
+- affordable logo maker in Rwanda
 - custom website development Kigali
-- mobile app developer Rwanda
 - professional web design Rwanda
+
+### Local-language Keywords
+- urubuga rwa company (Kinyarwanda: "company website")
+- urubuga rw'ikigo
+- gukora urubuga
+
+Note: these appear in the meta keywords tag and structured data. Full Kinyarwanda
+sentences were deliberately not added to visible page copy without a native-speaker
+review — incorrect grammar on a public page would hurt credibility more than it
+would help rankings. If you want a bilingual tagline or a Kinyarwanda page, provide
+(or confirm) the exact phrasing and it can be added as real, visible content.
 
 ## 📈 Next Steps for SEO
 

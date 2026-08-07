@@ -16,7 +16,8 @@ import {
   ShoppingCart,
   Smartphone,
   HeadphonesIcon,
-  BadgeCheck
+  BadgeCheck,
+  Palette
 } from "lucide-react";
 
 const websiteTypes = [
@@ -41,6 +42,7 @@ const websiteTypes = [
 
 const myServices = [
   { icon: Globe, title: "Make New Website" },
+  { icon: Palette, title: "Graphic Design & Logo Maker" },
   { icon: RefreshCw, title: "Web Redesign" },
   { icon: DatabaseBackup, title: "Backup, Cloning & Migration" },
   { icon: Gauge, title: "Performance & SEO" },
@@ -82,7 +84,7 @@ export function ServicesSection() {
             ALL KIND OF <span className="text-primary">WEBSITES</span>
           </h2>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-            Whether you need a simple landing page or a complex web platform, we deliver fast, secure, and professional solutions tailored to your industry.
+            Website design, graphic design, and logo maker services in Kigali, Rwanda. Whether you need a simple landing page or a complex web platform, we deliver fast, secure, and professional solutions tailored to your industry.
           </p>
         </motion.div>
 

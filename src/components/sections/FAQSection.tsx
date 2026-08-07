@@ -18,6 +18,10 @@ const faqs = [
     answer: "We'll need your brand assets (logo, colors), content (text, images), and a clear idea of your goals. Don't worry if you don't have everything ready—we can guide you through the process and even help create content.",
   },
   {
+    question: "Do you offer graphic design and logo maker services?",
+    answer: "Yes! Alongside website design and development, we offer professional graphic design, logo design, and brand identity services for businesses and organizations across Kigali and Rwanda.",
+  },
+  {
     question: "Do you provide hosting and domain services?",
     answer: "We help you set up hosting and domain registration with reliable providers. While we don't host directly, we'll manage the entire setup process and ensure everything runs smoothly.",
   },

@@ -46,6 +46,14 @@ const Index = () => {
         },
         {
           "@type": "Question",
+          "name": "Do you offer graphic design and logo maker services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Alongside website design and development, we offer professional graphic design, logo design, and brand identity services for businesses and organizations across Kigali and Rwanda."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Do you provide hosting and domain services?",
           "acceptedAnswer": {
             "@type": "Answer",
