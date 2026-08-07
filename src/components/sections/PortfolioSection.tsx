@@ -24,19 +24,21 @@ const getProjectImage = (title: string, category: string): string => {
     return "/images/Marketing Poster.png";
   }
 
-  // Data Management/Admin/System projects
-  if (categoryLower.includes("data") || categoryLower.includes("management") || categoryLower.includes("system") || titleLower.includes("dataflow") || titleLower.includes("admin")) {
-    return "/images/admin image.png";
-  }
-
-  // Event/Venue projects
+  // Event/Venue projects (checked before the generic "management" rule below,
+  // since "Event Management" would otherwise match that first)
   if (categoryLower.includes("event") || categoryLower.includes("venue") || titleLower.includes("venue") || titleLower.includes("event")) {
     return "/images/Web Development Service Instagram Post.png";
   }
 
-  // Organization/Choir/Music projects
+  // Organization/Choir/Music projects (also checked before the generic
+  // "management" rule, since "Organization Management" would match it first)
   if (categoryLower.includes("organization") || titleLower.includes("choir") || titleLower.includes("music")) {
     return "/images/user in tasks.png";
+  }
+
+  // Data Management/Admin/System projects
+  if (categoryLower.includes("data") || categoryLower.includes("management") || categoryLower.includes("system") || titleLower.includes("dataflow") || titleLower.includes("admin")) {
+    return "/images/admin image.png";
   }
 
   // Web Development projects
