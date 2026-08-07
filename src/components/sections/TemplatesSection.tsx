@@ -12,6 +12,14 @@ import {
   Hotel,
   type LucideIcon,
 } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import { ProjectRequestForm } from "@/components/ProjectRequestForm";
 
 interface Template {
   title: string;
@@ -33,7 +41,17 @@ const templates: Template[] = [
   { title: "Landing Page", category: "SaaS & Startups", image: "/images/templates/landing.jpg", color: "from-primary/30 to-accent/30", icon: Rocket },
 ];
 
-function TemplateCard({ template, index, isInView }: { template: Template; index: number; isInView: boolean }) {
+function TemplateCard({
+  template,
+  index,
+  isInView,
+  onSelect,
+}: {
+  template: Template;
+  index: number;
+  isInView: boolean;
+  onSelect: (template: Template) => void;
+}) {
   const [imageFailed, setImageFailed] = useState(false);
   const Icon = template.icon;
 
@@ -63,12 +81,13 @@ function TemplateCard({ template, index, isInView }: { template: Template; index
 
         {/* Hover overlay */}
         <div className="absolute inset-0 bg-slate-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <a
-            href="#contact"
+          <button
+            type="button"
+            onClick={() => onSelect(template)}
             className="px-5 py-2.5 bg-primary text-primary-foreground text-sm font-semibold rounded-full hover:bg-primary/90 transition-colors"
           >
             Get This Style
-          </a>
+          </button>
         </div>
       </div>
 
@@ -83,6 +102,7 @@ function TemplateCard({ template, index, isInView }: { template: Template; index
 export function TemplatesSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(null);
 
   return (
     <section id="templates" className="section-padding relative overflow-hidden bg-white">
@@ -109,10 +129,34 @@ export function TemplatesSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {templates.map((template, index) => (
-            <TemplateCard key={template.title} template={template} index={index} isInView={isInView} />
+            <TemplateCard
+              key={template.title}
+              template={template}
+              index={index}
+              isInView={isInView}
+              onSelect={setSelectedTemplate}
+            />
           ))}
         </div>
       </div>
+
+      <Dialog open={!!selectedTemplate} onOpenChange={(open) => !open && setSelectedTemplate(null)}>
+        <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>Get the {selectedTemplate?.title} style</DialogTitle>
+            <DialogDescription>
+              Tell us a bit about your project and we'll prepare a custom quote inspired by this style.
+            </DialogDescription>
+          </DialogHeader>
+          {selectedTemplate && (
+            <ProjectRequestForm
+              initialProjectType="Website Development"
+              initialMessage={`I'm interested in a ${selectedTemplate.title} (${selectedTemplate.category}) style website. Please prepare a custom quote.`}
+              onSuccess={() => setSelectedTemplate(null)}
+            />
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }

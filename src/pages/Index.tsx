@@ -111,11 +111,11 @@ const Index = () => {
       <main role="main">
         <HeroSection />
         <MarqueeSection />
+        <TemplatesSection />
         <AboutSection />
         <StatsSection />
         <TrustSection />
         <ServicesSection />
-        <TemplatesSection />
         <PortfolioSection />
         <WhyChooseSection />
         <ProcessSection />
