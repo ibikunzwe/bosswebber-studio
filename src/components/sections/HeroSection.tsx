@@ -49,25 +49,33 @@ export function HeroSection() {
           />
         </AnimatePresence>
       </div>
-      {/* Dark tint overlay for text readability */}
-      <div className="absolute inset-0 z-0 bg-[#0f0b29]/80 mix-blend-multiply" />
-      <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#0f0b29] to-transparent/50" />
+      {/* Directional gradient for text legibility — keeps the image itself clear
+          instead of a flat dark wash over the whole frame */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#0a0e1f] via-[#0a0e1f]/75 via-30% to-[#0a0e1f]/10" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#0a0e1f]/90 via-[#0a0e1f]/10 via-40% to-transparent" />
+      {/* Subtle edge vignette for a cinematic, premium finish */}
+      <div className="absolute inset-0 z-0 shadow-[inset_0_0_150px_60px_rgba(10,14,31,0.55)]" />
 
-      {/* Carousel Indicators */}
-      <div className="absolute bottom-8 right-6 sm:right-10 z-10 flex gap-2">
-        {heroSlides.map((slide, index) => (
-          <button
-            key={slide.label}
-            type="button"
-            onClick={() => setCurrent(index)}
-            aria-label={`Show ${slide.label} slide`}
-            className={`h-1.5 rounded-full transition-all duration-300 ${
-              index === current ? "w-8 bg-primary" : "w-4 bg-white/40 hover:bg-white/60"
-            }`}
-          />
-        ))}
+      {/* Carousel Indicators + current slide label */}
+      <div className="absolute bottom-8 right-6 sm:right-10 z-10 flex items-center gap-3">
+        <span className="text-white/70 text-xs font-semibold uppercase tracking-widest hidden sm:block">
+          {heroSlides[current].label}
+        </span>
+        <div className="flex gap-2 px-2.5 py-2 rounded-full bg-black/30 backdrop-blur-sm border border-white/10">
+          {heroSlides.map((slide, index) => (
+            <button
+              key={slide.label}
+              type="button"
+              onClick={() => setCurrent(index)}
+              aria-label={`Show ${slide.label} slide`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                index === current ? "w-8 bg-primary" : "w-4 bg-white/50 hover:bg-white/80"
+              }`}
+            />
+          ))}
+        </div>
       </div>
-      
+
       {/* Container for content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-48 pb-16">
         <div className="max-w-3xl">
