@@ -35,9 +35,11 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">B</span>
-              </div>
+              <img
+                src="/images/bosswebber-logo.png"
+                alt="Bosswebber Logo"
+                className="w-10 h-10 rounded-full object-cover"
+              />
               <span className="text-xl font-bold text-foreground">Bosswebber</span>
             </a>
             <p className="text-muted-foreground mb-6 max-w-sm">
@@ -139,7 +141,7 @@ export function Footer() {
             {/* Social Links */}
             <div className="flex gap-3">
               <a
-                href="https://twitter.com"
+                href="https://twitter.com/bosswebs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-lg glass-card flex items-center justify-center hover:bg-accent/20 transition-colors"
@@ -150,7 +152,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/company/bosswebs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-lg glass-card flex items-center justify-center hover:bg-accent/20 transition-colors"
@@ -161,7 +163,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/bosswebs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-lg glass-card flex items-center justify-center hover:bg-accent/20 transition-colors"

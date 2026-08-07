@@ -50,7 +50,7 @@ export function AboutSection() {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -top-6 -left-6 bg-primary text-white p-6 rounded-2xl shadow-xl z-30 flex flex-col items-center justify-center min-w-[140px]"
             >
-              <span className="text-4xl font-black leading-none">05+</span>
+              <span className="text-4xl font-black leading-none">12+</span>
               <span className="text-[10px] uppercase tracking-widest font-bold mt-1 text-center leading-tight">
                 Years of <br/> Excellence
               </span>
@@ -71,15 +71,19 @@ export function AboutSection() {
             </h2>
             
             <p className="text-slate-600 text-lg leading-relaxed mb-6 font-medium">
-              Bosswebber is a premier scalable freelance tech agency founded by Bosco Niyitegeka. 
-              Operating from Rwanda and serving clients worldwide, we transform ideas into powerful digital products.
+              Looking for Full Stack Website development that's mobile responsive and super fast?
+              Bosswebber is a premier scalable freelance tech agency founded by Bosco Niyitegeka, who brings
+              more than 12 years of professional experience in web design and development. Operating from
+              Rwanda and serving clients worldwide, we transform ideas into powerful digital products.
             </p>
-            
+
             <div className="space-y-4 mb-10">
               {[
-                "High-conversion digital products",
-                "Accessible professional tech services",
-                "Scalable development for global growth"
+                "100% mobile responsive websites",
+                "Custom design & full stack development",
+                "Landing pages, SaaS design & Figma-to-website conversion",
+                "Quality design, optimized graphics & fast loading",
+                "Speed-optimized for super fast performance"
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3">
                   <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">

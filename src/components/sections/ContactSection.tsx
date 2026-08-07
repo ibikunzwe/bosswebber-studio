@@ -378,7 +378,7 @@ ${submissionData.message}
             {/* Social Links */}
             <div className="flex gap-4">
               <a
-                href="https://twitter.com"
+                href="https://twitter.com/bosswebs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg glass-card flex items-center justify-center hover:bg-accent/20 transition-colors"
@@ -389,7 +389,7 @@ ${submissionData.message}
                 </svg>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/company/bosswebs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg glass-card flex items-center justify-center hover:bg-accent/20 transition-colors"
@@ -400,7 +400,7 @@ ${submissionData.message}
                 </svg>
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/ibikunzwe"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg glass-card flex items-center justify-center hover:bg-accent/20 transition-colors"
@@ -411,7 +411,7 @@ ${submissionData.message}
                 </svg>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/bosswebs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg glass-card flex items-center justify-center hover:bg-accent/20 transition-colors"

@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, MapPin, Phone, Cloud, ChevronDown } from "lucide-react";
+import { Menu, X, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { name: "Home", href: "#" },
-  { name: "Services", href: "#services", hasDropdown: true },
   { name: "About", href: "#about" },
-  { name: "Blog", href: "#blog" },
-  { name: "Styles", href: "#styles" },
+  { name: "Services", href: "#services" },
+  { name: "Templates", href: "#templates" },
+  { name: "Portfolio", href: "#portfolio" },
+  { name: "Pricing", href: "#pricing" },
+  { name: "FAQ", href: "#faq" },
 ];
 
 export function Navbar() {
@@ -53,7 +55,11 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 text-white">
-            <Cloud size={32} strokeWidth={1.5} />
+            <img
+              src="/images/bosswebber-logo.png"
+              alt="Bosswebber Logo"
+              className="w-11 h-11 rounded-full object-cover"
+            />
           </a>
 
           {/* Nav Links */}
@@ -65,7 +71,6 @@ export function Navbar() {
                 className="text-white/80 hover:text-white transition-colors duration-200 text-sm flex items-center gap-1"
               >
                 {link.name}
-                {link.hasDropdown && <ChevronDown size={14} className="opacity-70" />}
               </a>
             ))}
           </div>
